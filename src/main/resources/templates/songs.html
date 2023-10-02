@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Songs</title>
+  </head>
+  
+  <body>
+	  
+	<h1>List of songs:</h1>
+    <br>
+    
+    <ul>
+		<li th:each="song, index : ${songs}">
+			ForEach index: [[${index.index}]]
+			<br>
+			ID: [[${song.id}]]
+			<br>
+			Title: [[${song.title}]]
+		</li>
+	</ul>
+    
+  </body>
+  
+</html>

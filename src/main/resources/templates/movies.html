@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Movies</title>
+  </head>
+  
+  <body>
+    
+    <h1>List of movies:</h1>
+    <br>
+    
+    <ul>
+		<li th:each="movie, index : ${movies}">
+			ForEach index: [[${index.index}]]
+			<br>
+			ID: [[${movie.id}]]
+			<br>
+			Title: [[${movie.title}]]
+		</li>
+	</ul>
+    
+  </body>
+  
+</html>
