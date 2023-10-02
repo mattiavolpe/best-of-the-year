@@ -2,7 +2,6 @@ package org.java.app.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 
 import org.java.app.model.Movie;
 import org.java.app.model.Song;
