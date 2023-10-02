@@ -54,17 +54,16 @@ public class MainController {
 		Song song = getBestSongs().stream().filter(singleSong -> singleSong.getId() == id).toList().get(0);
 		
 		model.addAttribute("song", song);
+		
 		return "song";
 	}
 	
 	private List<Movie> getBestMovies() {
 		List<Movie> movies = new ArrayList<>();
 		
-		movies.add(new Movie(1, "Movie 1"));
-		movies.add(new Movie(2, "Movie 2"));
-		movies.add(new Movie(3, "Movie 3"));
-		movies.add(new Movie(4, "Movie 4"));
-		movies.add(new Movie(5, "Movie 5"));
+		for (int i = 1; i <= 5; i++) {
+			movies.add(new Movie(i, "Movie " + i));
+		}
 		
 		return movies;
 	}
@@ -72,11 +71,9 @@ public class MainController {
 	private List<Song> getBestSongs() {
 		List<Song> songs = new ArrayList<>();
 		
-		songs.add(new Song(1, "Song 1"));
-		songs.add(new Song(2, "Song 2"));
-		songs.add(new Song(3, "Song 3"));
-		songs.add(new Song(4, "Song 4"));
-		songs.add(new Song(5, "Song 5"));
+		for (int i = 1; i <= 5; i++) {
+			songs.add(new Song(i, "Song " + i));
+		}
 		
 		return songs;
 	}
