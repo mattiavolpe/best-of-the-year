@@ -15,8 +15,8 @@
     <br>
     
     <ul>
-		<li th:each="song, index : ${songs}">
-			ForEach index: [[${index.index}]]
+		<li th:each="song, stats : ${songs}">
+			ForEach index: [[${stats.index}]]
 			<br>
 			ID: [[${song.id}]]
 			<br>

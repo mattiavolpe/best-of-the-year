@@ -15,8 +15,8 @@
     <br>
     
     <ul>
-		<li th:each="movie, index : ${movies}">
-			ForEach index: [[${index.index}]]
+		<li th:each="movie, stats : ${movies}">
+			ForEach index: [[${stats.index}]]
 			<br>
 			ID: [[${movie.id}]]
 			<br>

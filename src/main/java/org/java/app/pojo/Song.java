@@ -1,11 +1,11 @@
-package org.java.app.model;
+package org.java.app.pojo;
 
-public class Movie {
-	
+public class Song {
+
 	private int id;
 	private String title;
 	
-	public Movie(int id, String title) {
+	public Song(int id, String title) {
 		setId(id);
 		setTitle(title);
 	}

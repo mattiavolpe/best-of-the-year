@@ -3,8 +3,8 @@ package org.java.app.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.java.app.model.Movie;
-import org.java.app.model.Song;
+import org.java.app.pojo.Movie;
+import org.java.app.pojo.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
