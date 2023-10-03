@@ -25,8 +25,10 @@ public class MainController {
 	@GetMapping("/movies")
 	public String getMovies(Model model) {
 		List<Movie> movies = getBestMovies();
+		String page = "movies";
 		
 		model.addAttribute("movies", movies);
+		model.addAttribute("page", page);
 		
 		return "movies";
 	}
@@ -34,8 +36,10 @@ public class MainController {
 	@GetMapping("/songs")
 	public String getSongs(Model model) {
 		List<Song> songs = getBestSongs();
+		String page = "songs";
 		
 		model.addAttribute("songs", songs);
+		model.addAttribute("page", page);
 		
 		return "songs";
 	}
@@ -43,8 +47,10 @@ public class MainController {
 	@GetMapping("/movies/{id}")
 	public String getMovie(@PathVariable int id, Model model) {
 		Movie movie = getBestMovies().stream().filter(singleMovie -> singleMovie.getId() == id).toList().get(0);
+		String page = "movies";
 		
 		model.addAttribute("movie", movie);
+		model.addAttribute("page", page);
 		
 		return "movie";
 	}
@@ -52,8 +58,10 @@ public class MainController {
 	@GetMapping("/songs/{id}")
 	public String getSong(@PathVariable int id, Model model) {
 		Song song = getBestSongs().stream().filter(singleSong -> singleSong.getId() == id).toList().get(0);
+		String page = "songs";
 		
 		model.addAttribute("song", song);
+		model.addAttribute("page", page);
 		
 		return "song";
 	}

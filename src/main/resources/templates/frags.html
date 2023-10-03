@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+    
+    <title>Fragments</title>
+  </head>
+  
+  <body>
+	  
+  	<head th:fragment="html-head(title)">
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+	    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+	    
+	    <title>[[${title}]]</title>
+  	</head>
+	  
+		<header th:fragment="header" class="d-flex align-items-center border border-dark my-3">
+				<div class="p-3 w-25 border-end border-dark">
+					<strong>Best of</strong>
+				</div>
+				<div class="px-3">
+					<a href="/" th:class="${page == 'songs' || page == 'movies'} ? 'btn btn-outline-dark px-5 me-2' : 'd-none'">Home</a>
+					<a href="/movies" th:class="${page == 'movies'} ? 'btn btn-primary px-5 me-2' : 'btn btn-outline-dark px-5 me-2'">Movies</a>
+					<a href="/songs" th:class="${page == 'songs'} ? 'btn btn-primary px-5 me-2' : 'btn btn-outline-dark px-5 me-2'">Songs</a>
+				</div>
+		</header>
+		
+		<div th:fragment="pojo-detail" class="text-center">
+			<img class="img-fluid" src="http://picsum.photos/600/400">
+    	<br><br>
+    	<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis odio sit amet sem eleifend pretium semper a enim. Sed ultricies mauris erat, vel rutrum nunc consequat at. Mauris sagittis non turpis sed interdum. In nec sagittis diam. Vestibulum accumsan ac justo sed dignissim. Donec interdum justo vel ex sagittis, quis imperdiet lorem iaculis. Aenean quam diam, dignissim a egestas quis, accumsan id diam. Nunc pharetra enim mauris.
+			Donec imperdiet elit velit, vitae placerat arcu aliquam sed. Phasellus id sollicitudin sapien, sed pulvinar quam. Etiam enim erat, porttitor quis nisi non, efficitur convallis justo. Sed ac purus elementum, pellentesque elit id, suscipit tortor. Phasellus vel gravida purus. In pretium ornare mollis. Cras eu quam sodales lectus ullamcorper sagittis ut a metus. Praesent vel maximus mi. Fusce placerat eros risus. Curabitur molestie sodales diam, id dignissim purus suscipit sed. Quisque rutrum lacus sed lorem aliquam, eu blandit urna imperdiet. Etiam semper enim in tincidunt blandit. Cras commodo ipsum auctor erat tristique, eu dictum neque lobortis.
+			</p>
+		</div>
+    
+  </body>
+  
+</html>

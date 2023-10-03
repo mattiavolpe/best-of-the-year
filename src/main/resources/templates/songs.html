@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
-    
-    <title>Songs</title>
-  </head>
+  <head th:replace="frags :: html-head('Songs')"></head>
   
   <body>
+	  <div class="container">
+		  <header th:replace="frags :: header"></header>	  
 	  
-	<h1>List of songs:</h1>
-    <br>
+  	  <h1 class="text-center">Best songs</h1>
+	    
+    	<ul class="text-center list-unstyled">
+				<li th:each="song : ${songs}" th:object="${song}">
+					<a th:href="'/songs/' + *{getId()}" class="btn btn-outline-dark px-5 py-2 rounded-0">[[*{getTitle()}]]</a>
+				</li>
+			</ul>
+		</div>
     
-    <ul>
-		<li th:each="song, stats : ${songs}">
-			ForEach index: [[${stats.index}]]
-			<br>
-			ID: [[${song.id}]]
-			<br>
-			Title: [[${song.title}]]
-		</li>
-	</ul>
-    
-  </body>
+	</body>
   
 </html>

@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
-    
-    <title>Movies</title>
-  </head>
+  <head th:replace="frags :: html-head('Movies')"></head>
   
   <body>
+	  <div class="container">
+		  <header th:replace="frags :: header"></header>	  
+	  
+  	  <h1 class="text-center">Best movies</h1>
+	    
+    	<ul class="text-center list-unstyled">
+				<li th:each="movie : ${movies}" th:object="${movie}">
+					<a th:href="'/movies/' + *{getId()}" class="btn btn-outline-dark px-5 py-2 rounded-0">[[*{getTitle()}]]</a>
+				</li>
+			</ul>
+		</div>
     
-    <h1>List of movies:</h1>
-    <br>
-    
-    <ul>
-		<li th:each="movie, stats : ${movies}">
-			ForEach index: [[${stats.index}]]
-			<br>
-			ID: [[${movie.id}]]
-			<br>
-			Title: [[${movie.title}]]
-		</li>
-	</ul>
-    
-  </body>
+	</body>
   
 </html>
